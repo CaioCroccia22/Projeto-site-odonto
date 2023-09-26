@@ -5,8 +5,11 @@
     list-style: none;
     font-family: Arial, sans-serif;
     font: 2rem;
+    
 }
-
+body{
+    background-color: #8DBDF2;
+}
 /*Navbar*/
 a{
     text-decoration: none;
@@ -21,7 +24,7 @@ a{
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    border-radius: 10px 20px 30px 40px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 nav ul{
@@ -36,22 +39,45 @@ nav ul a{
     border-left: 3px solid white;
 }
 /*Carrossel*/
-.carousel{
+.carousel {
     box-shadow: 2px 2px 4px black;
     overflow: hidden;
     height: 300px;
-    transform: translateX(0);
-}
-.cont-img{
+    width: 100%; /* Ajustado para 100% da largura do contêiner pai */
+    max-width: 100%; /* Limita a largura máxima para 100% */
+    margin: 0 auto; /* Centraliza o carrossel no contêiner pai */
+  }
+  
+  .cont-img {
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
     transition: transform 0.5s ease-in-out;
     transform: translateX(0);
-}
+  }
+
 .img-carousel{
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
+
+/*Responsividade carrossel*/
+/* Estilo para tornar o carrossel 100% da largura em telas pequenas */
+@media (max-width: 767px) {
+    .carousel {
+      width: 70%; /* Altera a largura para 100% em telas pequenas */
+    }
+  }
+  
+  /* Estilo adicional para dispositivos maiores, se necessário */
+  @media (min-width: 1123px) {
+    .carousel {
+      width: 100%; /* Ajuste a largura para 70% em telas maiores */
+    }
+  }
+
+
 /*Conteudo Procedimento*/
 .cont-content{
     display: flex;
@@ -60,39 +86,40 @@ nav ul a{
     justify-content: center;
     padding: 10px;
     gap: 5rem;
-    background-color: #8DBDF2;
+    
+    
 
 }
 /*Procedimentos*/
-.cont-content h1:first-child{
-    color: #fff;
-    border-bottom: 3px;
+.desc-procedure{
+    border: 5px solid #fff;
+    background-color: aliceblue;
+    border-radius: 10px 10px 10px 10px;
+
 }
 
-.first-content{ 
+.title-procedure{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 1000px;
-    height: 60vh;
-    padding: 10px;
-    gap: 5rem;
-    background-color: #fff;
-    border-radius: 10px 20px 30px 40px;
-    text-align: center;
+    align-items: center;
+    padding: 15px;
 }
 
-.text-procedure{
+.procedure-content{
+    display: flex;
+    align-items: center;
     
-    gap: 10px;
-    width: 40%;
-}
-
-.image-procedure{
-    max-width: 60%;
-    height: 20vh;
+    flex-direction: row;
+    
 }
 
 
 
+#img-procedure{
+    width: 400px;
+    object-fit: cover;
+    padding: 20px;
+
+}
